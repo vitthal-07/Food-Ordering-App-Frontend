@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./global.css";
 import { Toaster } from "./@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { BrowserRouter, Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./AppRoutes";
 import AuthProviderWithNavigate from "./auth/AuthProviderWithNavigate";
 
