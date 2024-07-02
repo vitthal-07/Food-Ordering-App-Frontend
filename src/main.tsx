@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Layout from "./Layouts/Layout";
 import "./global.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import AuthProviderWithNavigate from "./auth/AuthProviderWithNavigate";
+import { Toaster } from "./@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { BrowserRouter, Router } from "react-router-dom";
+import AppRoutes from "./AppRoutes";
+import AuthProviderWithNavigate from "./auth/AuthProviderWithNavigate";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -14,29 +14,20 @@ const queryClient = new QueryClient({
         },
     },
 });
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Layout />,
-        children: [
-            {
-                path: "/",
-                element: <HomePage />,
-            },
-            {
-                path: "/user-profile",
-                element: <div>Welcome to User Profile Page</div>,
-            },
-        ],
-    },
-]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <QueryClientProvider client={queryClient}>
-            <AuthProviderWithNavigate>
-                <RouterProvider router={router} />
-            </AuthProviderWithNavigate>
-        </QueryClientProvider>
+        <BrowserRouter>
+            <QueryClientProvider client={queryClient}>
+                <AuthProviderWithNavigate>
+                    <AppRoutes />
+                    <Toaster
+                        visibleToasts={1}
+                        position='top-right'
+                        richColors
+                    />
+                </AuthProviderWithNavigate>
+            </QueryClientProvider>
+        </BrowserRouter>
     </React.StrictMode>
 );
