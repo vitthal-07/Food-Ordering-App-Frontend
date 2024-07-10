@@ -27,6 +27,14 @@ export default function UsernameMenu() {
                         User Profile
                     </Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem>
+                    <Link
+                        to='/manage-restaurant'
+                        className='font-bold hover:text-orange-500'
+                    >
+                        Manage Restaurant
+                    </Link>
+                </DropdownMenuItem>
                 <Separator />
                 <DropdownMenuItem>
                     <Button
