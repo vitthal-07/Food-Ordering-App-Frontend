@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                     <AppRoutes />
                     <Toaster
                         visibleToasts={1}
-                        position='top-right'
+                        position="top-right"
                         richColors
                     />
                 </AuthProviderWithNavigate>
