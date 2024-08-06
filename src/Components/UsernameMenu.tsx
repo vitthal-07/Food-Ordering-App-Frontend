@@ -38,7 +38,14 @@ export default function UsernameMenu() {
                 <Separator />
                 <DropdownMenuItem>
                     <Button
-                        onClick={() => logout()}
+                        onClick={() =>
+                            logout({
+                                logoutParams: {
+                                    retunTo: import.meta.env
+                                        .VITE_APP_URL as string,
+                                },
+                            })
+                        }
                         className='flex  flex-1 bg-orange-500 font-bold'
                     >
                         Log Out

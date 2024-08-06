@@ -25,7 +25,13 @@ export default function MobileNavLinks() {
                 My Restaurant
             </Link>
             <Button
-                onClick={() => logout()}
+                onClick={() =>
+                    logout({
+                        logoutParams: {
+                            retunTo: import.meta.env.VITE_APP_URL as string,
+                        },
+                    })
+                }
                 className='flex items-center hover:bg-orange-500 px-3 font-bold'
             >
                 Log Out

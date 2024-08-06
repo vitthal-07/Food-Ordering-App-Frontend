@@ -26,7 +26,7 @@ export default function MobileNav() {
                     </span>
                 ) : (
                     <SheetTitle>
-                        <span>Welcome to MERNEats.com</span>
+                        <span>Welcome to Feastly</span>
                     </SheetTitle>
                 )}
 

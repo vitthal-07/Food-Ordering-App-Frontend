@@ -8,9 +8,9 @@ export default function Header() {
             <div className='container flex justify-between items-center mx-auto '>
                 <Link
                     to='/'
-                    className='text-3xl font-bold tracking-tight text-orange-500'
+                    className='text-3xl font-bold tracking-wide text-orange-500'
                 >
-                    MERNEats.com
+                    Feastly
                 </Link>
                 <div className='md:hidden'>
                     <MobileNav />
