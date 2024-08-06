@@ -7,21 +7,22 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 import ManageRestaurantPage from "./pages/ManageRestaurantPage";
 import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
+import OrderStatus from "./pages/OrderStatus";
 
 const AppRoutes = () => {
     return (
         <Routes>
             <Route
-                path="/"
+                path='/'
                 element={
                     <Layout showHero>
                         <HomePage />
                     </Layout>
                 }
             />
-            <Route path="/auth-callback" element={<AuthCallbackPage />} />
+            <Route path='/auth-callback' element={<AuthCallbackPage />} />
             <Route
-                path="/search/:city"
+                path='/search/:city'
                 element={
                     <Layout showHero={false}>
                         <SearchPage />
@@ -29,7 +30,7 @@ const AppRoutes = () => {
                 }
             />
             <Route
-                path="/detail/:restaurantId"
+                path='/detail/:restaurantId'
                 element={
                     <Layout showHero={false}>
                         <DetailPage />
@@ -38,7 +39,7 @@ const AppRoutes = () => {
             />
             <Route element={<ProtectedRoute />}>
                 <Route
-                    path="/user-profile"
+                    path='/user-profile'
                     element={
                         <Layout>
                             <UserProfilePage />
@@ -46,15 +47,23 @@ const AppRoutes = () => {
                     }
                 />
                 <Route
-                    path="/manage-restaurant"
+                    path='/manage-restaurant'
                     element={
                         <Layout>
                             <ManageRestaurantPage />
                         </Layout>
                     }
                 />
+                <Route
+                    path='/order-status'
+                    element={
+                        <Layout>
+                            <OrderStatus />
+                        </Layout>
+                    }
+                />
             </Route>
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path='*' element={<Navigate to='/' />} />
         </Routes>
     );
 };
